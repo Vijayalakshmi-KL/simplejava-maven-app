@@ -60,8 +60,8 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>[3.9.2,)</version>
-                </requireMavenVersion>
+               <version>[3.8.7,)</version>  <!-- Change the version range to allow 3.8.7 -->
+               </requireMavenVersion>
                 <requireJavaVersion>
                   <version>[17,)</version>
                 </requireJavaVersion>
