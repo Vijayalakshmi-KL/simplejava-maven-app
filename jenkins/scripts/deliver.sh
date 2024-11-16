@@ -26,8 +26,11 @@ set -x
 ##java -jar target/${NAME}-${VERSION}.jar
 java -jar "$(find target -name '*.jar')"
 ls -l target/
-NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.name | tr -d '\r')
-VERSION=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version | tr -d '\r')
+NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.name | tr -d '\r' | tr -d '\n')
+VERSION=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version | tr -d '\r' | tr -d '\n')
+
+ls -l target/
+
 
 java -jar "target/${NAME}-${VERSION}.jar"
 
