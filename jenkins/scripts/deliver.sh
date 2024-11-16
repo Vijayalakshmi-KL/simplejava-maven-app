@@ -31,3 +31,4 @@ VERSION=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version | sed 
 # Run the JAR file
 echo "Running JAR file: target/${NAME}-${VERSION}.jar"
 java -jar "target/${NAME}-${VERSION}.jar"
+echo 'Pool cSCM commit'
