@@ -25,8 +25,8 @@ echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 ##java -jar target/${NAME}-${VERSION}.jar
 # Extract the project name and version with proper sanitization
-NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.name | tr -d '\r' | tr -d '\n' | sed 's/[^a-zA-Z0-9.-]//g')
-VERSION=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version | tr -d '\r' | tr -d '\n' | sed 's/[^a-zA-Z0-9.-]//g')
+NAME=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.name | sed -e 's/\[[0-9;]*m//g' -e 's/[^a-zA-Z0-9.-]//g')
+VERSION=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version | sed -e 's/\[[0-9;]*m//g' -e 's/[^a-zA-Z0-9.-]//g')
 
 # Run the JAR file
 echo "Running JAR file: target/${NAME}-${VERSION}.jar"
