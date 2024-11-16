@@ -32,3 +32,4 @@ VERSION=$(mvn -q -DforceStdout help:evaluate -Dexpression=project.version | sed 
 echo "Running JAR file: target/${NAME}-${VERSION}.jar"
 java -jar "target/${NAME}-${VERSION}.jar"
 echo 'Pool SCM commit'
+echo 'Created for checking the multibranch pipeline viji'
